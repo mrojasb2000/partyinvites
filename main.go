@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"text/template"
 )
 
@@ -13,7 +14,17 @@ var responses = make([]*Rsvp, 0, 10)
 var templates = make(map[string]*template.Template, 3)
 
 func loadTemplates() {
-	// TODO - load templates here
+	templateNames := [5]string{"welcome", "form", "thanks", "sorry", "list"}
+	for index, name := range templateNames {
+		t, err := template.ParseFiles("layout.html", name, ".html")
+		if err != nil {
+			panic(err)
+		}
+
+		templates[name] = t
+		fmt.Println("Loaded template ", index, name)
+
+	}
 }
 func main() {
 	loadTemplates()

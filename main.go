@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"text/template"
 )
 
 type Rsvp struct {
@@ -10,7 +10,11 @@ type Rsvp struct {
 }
 
 var responses = make([]*Rsvp, 0, 10)
+var templates = make(map[string]*template.Template, 3)
 
+func loadTemplates() {
+	// TODO - load templates here
+}
 func main() {
-	fmt.Println("TODO: add some features")
+	loadTemplates()
 }

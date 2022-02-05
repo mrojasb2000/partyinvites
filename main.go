@@ -16,7 +16,7 @@ var templates = make(map[string]*template.Template, 3)
 func loadTemplates() {
 	templateNames := [5]string{"welcome", "form", "thanks", "sorry", "list"}
 	for index, name := range templateNames {
-		t, err := template.ParseFiles("layout.html", name, ".html")
+		t, err := template.ParseFiles("layout.html", name+".html")
 		if err != nil {
 			panic(err)
 		}

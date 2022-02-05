@@ -7,7 +7,7 @@
             </thead>
             <tbody>
                 {{ range . }}
-                    {{ if -WillAttend }}
+                    {{ if .WillAttend }}
                         <tr>
                             <td>{{ .Name }} </td>
                             <td>{{ .Email }} </td>
